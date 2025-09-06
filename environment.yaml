@@ -1,0 +1,9 @@
+name: template
+channels:
+  - defaults
+  - astropy
+  - conda-forge
+dependencies:
+  - python>=3.11
+  - astropy
+  - numpy
