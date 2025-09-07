@@ -1,6 +1,6 @@
 import utils as u
 
-class TemplateObject():
+class Generic():
     def __init__(
             self,
             **kwargs
