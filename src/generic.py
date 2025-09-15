@@ -9,7 +9,7 @@ class Generic():
             path: str,
             **kwargs
         ):
-        self.path: str = None
+        self.path: str = path
         for key, item in self.params.items():
             setattr(self, key, item)
         for key, item in kwargs.items():
@@ -22,7 +22,7 @@ class Generic():
     @classmethod
     def from_file(cls, file: str):
         params = u.read_yaml(file=file)
-        return cls(**params)
+        return cls(path=file, **params)
     
     @classmethod
     def template_yaml(cls, path: str):
