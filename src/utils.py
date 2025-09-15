@@ -27,6 +27,11 @@ def write_yaml(file: str, dictionary: dict):
         file (str): Path to write YAML file to.
         dictionary (dict): Dictionary to write.
     """
+    params = {}
+    # Placeholder for now
+    for key, value in dictionary.items():
+        # if value can be written to yaml:
+        params[key] = value
     with open(file, 'w') as f:
-        yaml.dump(dictionary, f)
+        yaml.dump(params, f)
         

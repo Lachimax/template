@@ -12,10 +12,7 @@ class Generic():
 
 
     def to_file(self):
-        params = 
-        for key, value in self.__dict__
-        params = self.__dict__.copy()
-
+        u.write_yaml(self.__dict__.copy())
 
     @classmethod
     def from_file(cls, file: str):
