@@ -28,13 +28,13 @@ if __name__ == '__main__':
         "-o",
         help="Path to output directory.",
         type=str,
-        default=lib.default_output_path
+        default="./output"
     )
     parser.add_argument(
         "-i",
         help="Path to directory containing input files.",
         type=str,
-        default=lib.default_input_path
+        default="./input"
     )
 
     args = parser.parse_args()
