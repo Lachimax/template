@@ -3,7 +3,6 @@ from typing import Union
 
 import astropy.io.misc.yaml as yaml
 
-
 def read_yaml(file: str) -> dict:
     """Reads a YAML file from disk, returning as a dict.
 

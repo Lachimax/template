@@ -3,7 +3,7 @@
 
 import os
 
-import src as template
+import template as template
 
 description = """
 Does something cool.
