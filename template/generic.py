@@ -3,7 +3,6 @@ import template.utils as u
 
 class Generic():
     params = {
-        "id": "0",
         "name": None
     }
     def __init__(
@@ -16,6 +15,8 @@ class Generic():
             setattr(self, key, item)
         for key, item in kwargs.items():
             setattr(self, key, item)
+        if self.id is None:
+            self.set_id()
         # Default to name of object as filename if a directory is provided as path
         if self.path is not None and os.path.isdir(self.path) and self.name is not None:
             self.path = os.path.join(self.path, self.name + ".yaml")
@@ -44,11 +45,22 @@ class Generic():
             dictionary=dictionary
         )
 
-    def set_id(self, idn: str = None, **kwargs):
+    def set_id(self, idn: str = None, **kwargs) -> str:
+        """Set ID of object.
+
+        Args:
+            idn (str, optional): _description_. Defaults to None.
+
+        Returns:
+            str: ID as set.
+        """
         if idn is None:
-            idn = u.generate_id(**kwargs)
+            idn = self.generate_id(**kwargs)
         self.id = idn
         return idn
+
+    def generate_id(self, **kwargs):
+        return u.generate_id(**kwargs)
 
     @classmethod
     def from_file(cls, file: str):
@@ -68,6 +80,6 @@ class Generic():
         """Saves a template YAML file in the format for creating this object.
 
         Args:
-            path (str): Path to save to. Defaults to 
+            path (str): Path to save to. Defaults to './template.yaml'
         """
         u.write_yaml(path, cls.params)
