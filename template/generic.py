@@ -3,6 +3,7 @@ import template.utils as u
 
 class Generic():
     params = {
+        "id": "0",
         "name": None
     }
     def __init__(
@@ -42,6 +43,12 @@ class Generic():
             file=path,
             dictionary=dictionary
         )
+
+    def set_id(self, idn: str = None, **kwargs):
+        if idn is None:
+            idn = u.generate_id(**kwargs)
+        self.id = idn
+        return idn
 
     @classmethod
     def from_file(cls, file: str):
