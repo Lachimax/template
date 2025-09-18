@@ -11,7 +11,7 @@ dependencies = [
     "astropy",
     "numpy",
 ]
-license = { file = "LICENSE.md" }
+license = { file = "LICENSE.txt" }
 description = "."
 readme = "README.md"
 [project.scripts]
