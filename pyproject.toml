@@ -15,4 +15,4 @@ license = { file = "LICENSE.txt" }
 description = "."
 readme = "README.md"
 [project.scripts]
-template_script = "template_script:parse_args"
+template_script = "template.template_script:parse_args"
